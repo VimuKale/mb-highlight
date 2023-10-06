@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { REGEX } from "./regex";
 import DOMPurify from "dompurify";
 import parse from "html-react-parser";
 import escapeStringRegexp from "escape-string-regexp";
 
 const Highlighter = (searchQuery = "", content, regExp) => {
-  return () => {
+  const highlightedContent = useMemo(() => {
     if (searchQuery?.trim()?.length) {
       const escapedSearchValue = escapeStringRegexp(searchQuery);
       const regex = new RegExp(
@@ -19,7 +19,9 @@ const Highlighter = (searchQuery = "", content, regExp) => {
       );
     }
     return content;
-  };
+  }, [searchQuery, content, regExp]);
+
+  return highlightedContent;
 };
 
 export default Highlighter;
