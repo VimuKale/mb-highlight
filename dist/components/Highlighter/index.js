@@ -23,7 +23,7 @@ const Highlighter = function Highlighter() {
   let searchQuery = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
   let content = arguments.length > 1 ? arguments[1] : undefined;
   let regExp = arguments.length > 2 ? arguments[2] : undefined;
-  const highlightedContent = (0, _react.useMemo)(() => {
+  const highlightedContent = () => {
     var _searchQuery$trim;
     if (searchQuery !== null && searchQuery !== void 0 && (_searchQuery$trim = searchQuery.trim()) !== null && _searchQuery$trim !== void 0 && _searchQuery$trim.length) {
       const escapedSearchValue = (0, _escapeStringRegexp.default)(searchQuery);
@@ -31,7 +31,7 @@ const Highlighter = function Highlighter() {
       return (0, _htmlReactParser.default)(_dompurify.default.sanitize(content === null || content === void 0 ? void 0 : content.replace(regex, '<span class="highlight">$1</span>')));
     }
     return content;
-  }, [searchQuery, content, regExp]);
+  };
   return highlightedContent;
 };
 var _default = exports.default = Highlighter;
