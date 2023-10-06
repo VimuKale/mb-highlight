@@ -1,6 +1,6 @@
 {
   "name": "mb-highlight",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": false,
   "author": "vimu kale",
   "main": "dist/index.js",
