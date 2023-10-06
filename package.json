@@ -1,11 +1,24 @@
 {
-  "name": "vmb-highlight",
-  "version": "0.1.0",
-  "private": true,
+  "name": "mb-highlight",
+  "version": "0.1.2",
+  "private": false,
+  "author": "vimu kale",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VimuKale/mb-highlight"
+  },
+  "keywords": [
+    "highlight", "react-highlighter", "highlighter", "react", "jsx"
+  ],
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "dompurify": "^3.0.6",
+    "escape-string-regexp": "^5.0.0",
+    "html-react-parser": "^4.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -13,7 +26,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "rm -rf dist && babel src --out-dir dist --copy-files",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -34,5 +47,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.23.0",
+    "@babel/core": "^7.23.0",
+    "@babel/preset-env": "^7.22.20"
   }
 }
