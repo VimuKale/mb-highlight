@@ -5,7 +5,7 @@ import parse from "html-react-parser";
 import escapeStringRegexp from "escape-string-regexp";
 
 const Highlighter = (searchQuery = "", content, regExp) => {
-  return React.useMemo(() => {
+  return () => {
     if (searchQuery?.trim()?.length) {
       const escapedSearchValue = escapeStringRegexp(searchQuery);
       const regex = new RegExp(
@@ -19,7 +19,7 @@ const Highlighter = (searchQuery = "", content, regExp) => {
       );
     }
     return content;
-  }, [searchQuery, content, regExp]);
+  };
 };
 
 export default Highlighter;
